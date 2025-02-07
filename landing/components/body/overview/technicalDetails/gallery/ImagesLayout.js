@@ -2,6 +2,7 @@ import { Box, ImageList, ImageListItem } from "@mui/material";
 import Image from "next/image";
 
 export default function ImagesLayout({ images }) {
+  //console.log(images);
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>
       <ImageList variant="masonry" cols={2} gap={30}>
