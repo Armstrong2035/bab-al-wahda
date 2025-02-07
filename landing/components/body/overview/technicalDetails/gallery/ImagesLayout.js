@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function ImagesLayout({ images }) {
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>
-      <ImageList variant="masonry" cols={2} gap={8}>
+      <ImageList variant="masonry" cols={2} gap={30}>
         {images.map((image, index) => {
           // First image takes full width
           const isFirstImage = index === 0;
@@ -25,6 +25,8 @@ export default function ImagesLayout({ images }) {
                   position: "relative",
                   height: imageHeight,
                   width: "100%",
+                  borderRadius: "10px",
+                  overflow: "hidden",
                 }}
               >
                 <Image
