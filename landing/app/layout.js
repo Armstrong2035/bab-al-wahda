@@ -1,3 +1,5 @@
+import { Manrope } from "next/font/google";
+
 export const metadata = {
   title: "DAMAC Riverside Views | Luxury Waterfront Living in Dubai",
   description:
@@ -12,9 +14,14 @@ export const metadata = {
   ],
 };
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={manrope.className}>
       <body style={{ backgroundColor: "#FFFFFF" }}>{children}</body>
     </html>
   );

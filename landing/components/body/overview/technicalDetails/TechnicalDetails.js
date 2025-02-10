@@ -1,13 +1,18 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Divider, Stack } from "@mui/material";
 import Location from "./location/Location";
 import Gallery from "./gallery/Gallery";
 import FloorPlan from "./floorplan/FloorPlan";
-export default function TechnicalDetails() {
+import Features from "./features/Features";
+export default function TechnicalDetails({ isDesktop }) {
   return (
     <Box>
       <Location />
-      <Gallery />
+      <Divider sx={{ mt: 20, mb: 20 }} />
+      <Gallery isDesktop={isDesktop} />
+      <Divider sx={{ mt: 20, mb: 20 }} />
       <FloorPlan />
+      <Divider sx={{ mt: 20, mb: 20 }} />
+      <Features />
     </Box>
   );
 }

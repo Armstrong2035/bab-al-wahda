@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import Heading from "./Heading";
 import Renderings from "./Renderings";
 import SubText from "./SubText";
@@ -10,10 +10,10 @@ const floorPlanImages = [
 
 export default function FloorPlan() {
   return (
-    <Box sx={{ mt: 10 }}>
+    <Container>
       <Heading />
       <Renderings images={floorPlanImages} />
-      <SubText />
-    </Box>
+      {/* <SubText /> */}
+    </Container>
   );
 }

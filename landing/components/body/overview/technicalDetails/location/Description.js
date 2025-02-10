@@ -1,4 +1,12 @@
-import { List, ListItem, ListItemText, Typography, Box } from "@mui/material";
+import typography from "@/utils/styles";
+import {
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  Box,
+  Stack,
+} from "@mui/material";
 
 export default function Description() {
   const locations = [
@@ -10,28 +18,32 @@ export default function Description() {
   ];
 
   return (
-    <Box sx={{ height: "100%" }}>
-      <Typography>
-        DAMAC Riverside puts you in the perfect spot—close to everything that
-        matters, yet far enough to feel like an escape.
-      </Typography>
+    <Stack spacing={10} sx={{ height: "100%" }}>
+      <Stack spacing={3}>
+        <Typography sx={typography.medium28}>
+          DAMAC Riverside puts you in the perfect spot. Close enough to
+          everything that matters, yet exclusive enough to be an escape.
+        </Typography>
 
-      <List>
-        {locations.map((location, index) => (
-          <ListItem key={index}>
-            <ListItemText>{location}</ListItemText>
-          </ListItem>
-        ))}
-      </List>
+        <List>
+          {locations.map((location, index) => (
+            <ListItem key={index}>
+              <Typography sx={typography.regular16}>{location}</Typography>
+            </ListItem>
+          ))}
+        </List>
 
-      <Typography>
-        Easy access to highways and key destinations means wherever life takes
-        you, you’re already on your way.
-      </Typography>
+        <Typography sx={{ ...typography.medium28, fontSize: "18px" }}>
+          Easy access to highways and key destinations means wherever life takes
+          you, you’re already on your way. Live close to the city and the river
+          at the same time with DAMAC Riverside Views, a wellness-inspired
+          residential community.
+        </Typography>
+      </Stack>
 
-      <Typography sx={{ alignSelf: "flex-end" }}>
+      <Typography sx={typography.regular48}>
         Starting Price: AED 880,000
       </Typography>
-    </Box>
+    </Stack>
   );
 }

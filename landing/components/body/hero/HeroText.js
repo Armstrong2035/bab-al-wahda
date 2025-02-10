@@ -1,7 +1,7 @@
-import { Typography, Box } from "@mui/material";
-import { typographyStyles } from "@/utils/styles";
+import { Typography, Box, Stack } from "@mui/material";
+import { mdTypography, typographyStyles } from "@/utils/styles";
 
-export default function HeroText() {
+export default function HeroText({ isDesktop }) {
   const style = {
     fontFamily: "'Manrope', sans-serif",
     fontStyle: "normal",
@@ -10,11 +10,20 @@ export default function HeroText() {
     lineHeight: "6.75rem", // 108px converted to rem
     color: "#000000", // hex version of rgb(0, 0, 0)
   };
+
+  console.log(isDesktop);
+  console.log(mdTypography);
   return (
-    <Box>
-      <Typography sx={style}>— Dream Single</Typography>
-      <Typography sx={style}>Family Houses in</Typography>
-      <Typography sx={style}>Riverside views</Typography>
-    </Box>
+    <Stack>
+      <Typography sx={isDesktop ? style : mdTypography.heading48}>
+        — Dream Single
+      </Typography>
+      <Typography sx={isDesktop ? style : mdTypography.heading48}>
+        Family Houses in
+      </Typography>
+      <Typography sx={isDesktop ? style : mdTypography.heading48}>
+        Riverside views
+      </Typography>
+    </Stack>
   );
 }

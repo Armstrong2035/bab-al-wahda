@@ -1,13 +1,13 @@
 import Hero from "./hero/Hero";
-import { Box } from "@mui/material";
+import { Box, Divider, Stack } from "@mui/material";
 import TechnicalDetails from "./overview/technicalDetails/TechnicalDetails";
-export default function Body() {
+export default function Body({ isDesktop }) {
   return (
-    <Box>
-      <Box sx={{ mt: 25, ml: 10, mr: 10 }}>
-        <Hero />
-        <TechnicalDetails />
+    <Stack alignItems={"center"} justifyContent={"center"}>
+      <Box sx={{ mt: 15, ml: 5, mr: 5 }}>
+        <Hero isDesktop={isDesktop} />
+        <TechnicalDetails isDesktop={isDesktop} />
       </Box>
-    </Box>
+    </Stack>
   );
 }

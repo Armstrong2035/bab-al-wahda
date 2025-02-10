@@ -8,7 +8,7 @@ export default function Renderings({ images }) {
   const myName = "Armstrong";
 
   return (
-    <Card>
+    <Card sx={{ mt: 5 }}>
       <Stack direction="row" spacing={2} sx={{ p: 2 }}>
         <Button
           variant={showFirst ? "contained" : "outlined"}

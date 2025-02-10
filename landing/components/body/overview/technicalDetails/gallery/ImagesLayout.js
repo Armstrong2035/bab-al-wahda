@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function ImagesLayout({ images }) {
   //console.log(images);
   return (
-    <Box sx={{ width: "100%", overflow: "hidden" }}>
+    <Box sx={{ width: "100%", overflow: "hidden", mt: 5 }}>
       <ImageList variant="masonry" cols={2} gap={30}>
         {images.map((image, index) => {
           // First image takes full width

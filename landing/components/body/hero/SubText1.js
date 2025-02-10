@@ -1,6 +1,7 @@
+import { mdTypography } from "@/utils/styles";
 import { Typography, Stack, Box, Button } from "@mui/material";
 
-export default function SubText1() {
+export default function SubText1({ isDesktop }) {
   const style1 = {
     heading: {
       fontFamily: "'Manrope', sans-serif",
@@ -14,23 +15,28 @@ export default function SubText1() {
       fontFamily: "'Manrope', sans-serif",
       fontStyle: "normal",
       fontWeight: 400,
-      fontSize: "14px",
-      lineHeight: "19px",
-      color: "#777777",
+      fontSize: "16px",
+      lineHeight: "22px",
+      color: "#525252",
     },
   };
 
   return (
-    <Stack spacing={18}>
+    <Stack
+      spacing={isDesktop ? 18 : 3}
+      justifyContent={"center"}
+      // sx={{ border: "1px solid red" }}
+    >
       <Box>
-        <Typography sx={style1.heading}> Damac Riverside Views</Typography>
-        <Typography sx={style1.body}>
-          1 & 2 bedroom riverside apartments
+        <Typography sx={isDesktop ? style1.heading : mdTypography.heading32}>
+          {" "}
+          Damac Riverside Views
         </Typography>
+        <Typography sx={style1.body}>4 & 5 bedroom riverside villas</Typography>
       </Box>
 
       <Box>
-        <Typography sx={{ ...style1.body, color: "#525252" }}>
+        <Typography sx={isDesktop ? style1.body : mdTypography.body16Gray}>
           Discover the charm of this single-family home nestled in Silver Lake.
           With its inviting atmosphere and vibrant location, it's the perfect
           place to call home.
