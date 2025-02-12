@@ -11,22 +11,13 @@ import SmallImageList from "./SmallImageList";
 
 export default function Gallery({ isDesktop }) {
   const images = [
-    "/masonry/twentyone.png",
-    "/masonry/ten.png",
-    "/masonry/two.png",
-    "/masonry/four.png",
-    "/masonry/five.png",
-    "/masonry/six.png",
-    "/masonry/eight.png",
-    "/masonry/eleven.png",
-    "/masonry/twelve.png",
-    "/masonry/thirteen.png",
-    "/masonry/fourteen.png",
-    "/masonry/fifteen.png",
-    "/masonry/sixteen.png",
-    "/masonry/seventeen.png",
-    "/masonry/eighteen.png",
-    "/masonry/nineteen.png",
+    "https://i.ibb.co/spTbQVCM/Riverside-6.jpg",
+    "https://i.ibb.co/gZBJ4Fyh/Riverside-7.jpg",
+    "https://i.ibb.co/gZBJ4Fyh/Riverside-7.jpg",
+    "https://i.ibb.co/dJj2yvwK/Riverside-4.jpg",
+    "https://i.ibb.co/mVXcctvN/Riverside-3.jpg",
+    "https://i.ibb.co/QjtPj7T0/Riverside-2.jpg",
+    "https://i.ibb.co/TBvJHr5p/Riverside-1.jpg",
   ];
 
   return (
@@ -34,7 +25,11 @@ export default function Gallery({ isDesktop }) {
       <Container>
         <Heading />
 
-        <ImagesLayout images={images} />
+        {isDesktop ? (
+          <ImagesLayout images={images} />
+        ) : (
+          <SmallImageList images={images} />
+        )}
       </Container>
     </Box>
   );
