@@ -4,7 +4,7 @@ export default function ScrollingAppBar() {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#005244", overflow: "hidden" }}
+      sx={{ backgroundColor: "#1C6658", overflow: "hidden" }}
     >
       <Toolbar>
         <Box
