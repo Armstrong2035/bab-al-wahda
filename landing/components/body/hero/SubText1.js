@@ -23,7 +23,7 @@ export default function SubText1({ isDesktop }) {
 
   return (
     <Stack
-      spacing={isDesktop ? 18 : 3}
+      spacing={isDesktop ? 10 : 3}
       justifyContent={"center"}
       // sx={{ border: "1px solid red" }}
     >
@@ -32,18 +32,20 @@ export default function SubText1({ isDesktop }) {
           {" "}
           Damac Riverside Views
         </Typography>
-        <Typography sx={style1.body}>4 & 5 bedroom riverside villas</Typography>
+        <Typography sx={style1.body}>
+          4 & 5 bedroom riverside townhouses
+        </Typography>
       </Box>
 
       <Box>
         <Typography sx={isDesktop ? style1.body : mdTypography.body16Gray}>
-          Discover the charm of this single-family home nestled in Silver Lake.
-          With its inviting atmosphere and vibrant location, it's the perfect
-          place to call home.
+          Welcome to Dubai's foremost wellness-inspired residential community,
+          Providing you with Stunning waterfront views, and world-class
+          amenities. This is more than a home.
         </Typography>
 
-        <Button variant="contained" sx={{ backgroundColor: "black", mt: 3 }}>
-          Explore Now
+        <Button variant="contained" sx={{ backgroundColor: "#005244", mt: 3 }}>
+          Register Your Interest
         </Button>
       </Box>
     </Stack>

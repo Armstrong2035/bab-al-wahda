@@ -22,7 +22,7 @@ const manrope = Manrope({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={manrope.className}>
-      <body style={{ backgroundColor: "#FFFFFF" }}>{children}</body>
+      <body style={{ backgroundColor: "#FCFFF3" }}>{children}</body>
     </html>
   );
 }

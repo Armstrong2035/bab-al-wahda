@@ -11,18 +11,18 @@ export default function HeroText({ isDesktop }) {
     color: "#000000", // hex version of rgb(0, 0, 0)
   };
 
-  console.log(isDesktop);
-  console.log(mdTypography);
+  // console.log(isDesktop);
+  // console.log(mdTypography);
   return (
     <Stack>
       <Typography sx={isDesktop ? style : mdTypography.heading48}>
-        — Dream Single
+        — where balance
       </Typography>
       <Typography sx={isDesktop ? style : mdTypography.heading48}>
-        Family Houses in
+        is a way of living,
       </Typography>
       <Typography sx={isDesktop ? style : mdTypography.heading48}>
-        Riverside views
+        not a hard choice
       </Typography>
     </Stack>
   );

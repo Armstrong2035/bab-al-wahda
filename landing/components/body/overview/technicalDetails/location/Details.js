@@ -56,10 +56,14 @@ export default function Details() {
   };
 
   return (
-    <TableContainer component={Paper} elevation={0}>
+    <TableContainer
+      component={Paper}
+      elevation={0}
+      sx={{ backgroundColor: "#F2FFC2" }}
+    >
       <Table>
         <TableBody>
-          <TableRow>
+          <TableRow sx={{ borderColor: "#005244" }}>
             <TableCell>Unit Types</TableCell>
             <TableCell>1 & 2 Bedrooms</TableCell>
           </TableRow>

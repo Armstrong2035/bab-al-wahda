@@ -10,7 +10,7 @@ export default function TechnicalDetails({ isDesktop, images }) {
       <Divider sx={{ mt: 20, mb: 20 }} />
       <Gallery isDesktop={isDesktop} images={images} />
       <Divider sx={{ mt: 20, mb: 20 }} />
-      <FloorPlan />
+      <FloorPlan isDesktop={isDesktop} />
       <Divider sx={{ mt: 20, mb: 20 }} />
       <Features />
     </Box>

@@ -5,20 +5,36 @@ import Image from "next/image";
 export default function Renderings({ images }) {
   const [showFirst, setShowFirst] = useState(true);
 
-  const myName = "Armstrong";
-
   return (
     <Card sx={{ mt: 5 }}>
       <Stack direction="row" spacing={2} sx={{ p: 2 }}>
         <Button
           variant={showFirst ? "contained" : "outlined"}
           onClick={() => setShowFirst(true)}
+          sx={{
+            backgroundColor: showFirst ? "#005244" : "transparent",
+            color: showFirst ? "white" : "#005244",
+            borderColor: "#005244",
+            "&:hover": {
+              backgroundColor: showFirst ? "#005244" : "transparent",
+              opacity: 0.9,
+            },
+          }}
         >
           4 bedrooms
         </Button>
         <Button
           variant={!showFirst ? "contained" : "outlined"}
           onClick={() => setShowFirst(false)}
+          sx={{
+            backgroundColor: !showFirst ? "#005244" : "transparent",
+            color: !showFirst ? "white" : "#005244",
+            borderColor: "#005244",
+            "&:hover": {
+              backgroundColor: !showFirst ? "#005244" : "transparent",
+              opacity: 0.9,
+            },
+          }}
         >
           5 bedrooms
         </Button>
