@@ -5,7 +5,7 @@ import TechnicalDetails from "./overview/technicalDetails/TechnicalDetails";
 import ContactForm from "../form/ContactForm";
 // Remove the separate useTheme import
 
-export default function Body({ images, heroImage }) {
+export default function Body({ images, heroImage, masterPlan }) {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("lg"));
 
@@ -13,7 +13,11 @@ export default function Body({ images, heroImage }) {
     <Stack alignItems={"center"} justifyContent={"center"}>
       <Box sx={{ mt: 10, ml: 5, mr: 5 }}>
         <Hero isDesktop={isDesktop} heroImage={heroImage} />
-        <TechnicalDetails isDesktop={isDesktop} images={images} />
+        <TechnicalDetails
+          isDesktop={isDesktop}
+          images={images}
+          masterPlan={masterPlan}
+        />
         <ContactForm />
       </Box>
     </Stack>

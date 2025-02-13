@@ -10,7 +10,7 @@ export default function Heading() {
         <Typography sx={typography.medium16}>Gallery</Typography>
 
         <Typography sx={typography.regular28}>
-          Where every detail exudes beauty, and practically.
+          Where every detail exudes beauty and practically.
         </Typography>
       </Stack>
     </Stack>

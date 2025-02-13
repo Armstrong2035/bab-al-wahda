@@ -42,7 +42,7 @@ export default function Description() {
       </Stack>
 
       <Typography sx={typography.regular48}>
-        Starting Price: AED 880,000
+        Starting Price: AED 888,000
       </Typography>
     </Stack>
   );

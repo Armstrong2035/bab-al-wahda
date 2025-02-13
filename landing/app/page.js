@@ -6,8 +6,6 @@ export const dynamic = "force-static";
 const images = [
   "https://i.ibb.co/spTbQVCM/Riverside-6.jpg",
   "https://i.ibb.co/gZBJ4Fyh/Riverside-7.jpg",
-  "https://i.ibb.co/gZBJ4Fyh/Riverside-7.jpg",
-  "https://i.ibb.co/dJj2yvwK/Riverside-4.jpg",
   "https://i.ibb.co/mVXcctvN/Riverside-3.jpg",
   "https://i.ibb.co/QjtPj7T0/Riverside-2.jpg",
   "https://i.ibb.co/TBvJHr5p/Riverside-1.jpg",
@@ -22,11 +20,13 @@ const images = [
 
 const heroImage = "https://i.ibb.co/ppTrdbs/interior.png";
 
+const masterPlan = "https://i.ibb.co/WNqgnPmL/37.png";
+
 export default function Home() {
   return (
     <div>
       <ScrollingAppBar />
-      <Body images={images} heroImage={heroImage} />
+      <Body images={images} heroImage={heroImage} masterPlan={masterPlan} />
     </div>
   );
 }

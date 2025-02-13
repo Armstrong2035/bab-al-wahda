@@ -14,8 +14,9 @@ import Details from "./Details";
 import Description from "./Description";
 import Heading from "./Heading";
 import typography from "@/utils/styles";
+import HeroImage from "@/components/body/hero/HeroImage";
 
-export default function Location() {
+export default function Location({ masterPlan }) {
   return (
     <Box sx={{ mt: 10 }}>
       <Container>
@@ -28,6 +29,10 @@ export default function Location() {
 
           <Grid2 item size={{ sm: 12, md: 12, lg: 6 }}>
             <Details />
+          </Grid2>
+
+          <Grid2 item size={{ sm: 12, md: 12, lg: 12 }}>
+            <HeroImage heroImage={masterPlan} />
           </Grid2>
         </Grid2>
       </Container>

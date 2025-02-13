@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, Box } from "@mui/material";
 export default function ScrollingAppBar() {
   return (
     <AppBar
-      position="static"
+      position="sticky"
       sx={{ backgroundColor: "#1C6658", overflow: "hidden" }}
     >
       <Toolbar>

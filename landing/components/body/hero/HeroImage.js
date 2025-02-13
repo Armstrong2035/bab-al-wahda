@@ -14,15 +14,16 @@ export default function HeroImage({ heroImage }) {
     >
       <Image
         src={heroImage}
-        alt="Hero image"
-        width={1920} // Replace with actual width
-        height={1080} // Replace with actual height
+        alt="Damac riverside interior"
+        width={1920}
+        height={1080}
+        priority={true}
+        quality={85}
         style={{
           objectFit: "cover",
           width: "100%",
           height: "100%",
         }}
-        quality={100}
       />
     </Box>
   );
