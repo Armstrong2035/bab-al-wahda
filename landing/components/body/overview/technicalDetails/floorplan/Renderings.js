@@ -78,9 +78,9 @@ export default function Renderings({ images }) {
           <Image
             src={
               activeType === "1bed"
-                ? "https://i.postimg.cc/g0sLyhWN/Marine-3-1-BR-Type-B2-Type-C1-Type-C2.png"
+                ? images[2]
                 : activeType === "2bed"
-                ? "https://i.postimg.cc/GpdssQZ4/Marine-3-2-BR-Type-A1-Type-A2.png"
+                ? images[3]
                 : activeType === "4bed"
                 ? images[0]
                 : images[1]
