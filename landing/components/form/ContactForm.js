@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Box,
   TextField,
@@ -9,6 +8,8 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import { db } from "@/utils/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -18,6 +19,9 @@ export default function ContactForm() {
     unitPreference: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -25,11 +29,36 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    setIsSubmitting(true);
+
+    try {
+      const docRef = await addDoc(collection(db, "leads"), {
+        ...formData,
+        createdAt: serverTimestamp(),
+        status: "new",
+        source: "website",
+        project: "Damac Riverside Views",
+      });
+
+      console.log("Document written with ID: ", docRef.id);
+
+      // Clear form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        unitPreference: "",
+      });
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
+  // Keep your existing return JSX, just update the form onSubmit and add status message
   return (
     <Box
       id="riverside-contact-form"
@@ -37,12 +66,10 @@ export default function ContactForm() {
         bgcolor: "#1C6658",
         p: 4,
         borderRadius: 2,
-        textAlign: "center", // Center all text
+        textAlign: "center",
       }}
     >
       <Stack spacing={1} sx={{ mb: 4, color: "white", alignItems: "center" }}>
-        {" "}
-        {/* Center stack items */}
         <Typography variant="h4" sx={{ fontWeight: 500 }}>
           Book your unit
         </Typography>
@@ -51,16 +78,31 @@ export default function ContactForm() {
         </Typography>
       </Stack>
 
+      {submitStatus.message && (
+        <Typography
+          sx={{
+            mb: 2,
+            color: submitStatus.type === "success" ? "#4caf50" : "#f44336",
+            bgcolor: "white",
+            p: 1,
+            borderRadius: 1,
+          }}
+        >
+          {submitStatus.message}
+        </Typography>
+      )}
+
       <Box
         component="form"
         onSubmit={handleSubmit}
         sx={{
           width: "100%",
-          maxWidth: 400, // Made narrower for better centered appearance
+          maxWidth: 400,
           mx: "auto",
         }}
       >
         <Stack spacing={3}>
+          {/* Keep your existing TextField components */}
           <TextField
             label="Name"
             name="name"
@@ -142,6 +184,7 @@ export default function ContactForm() {
             type="submit"
             variant="contained"
             fullWidth
+            disabled={isSubmitting}
             sx={{
               bgcolor: "white",
               color: "#1C6658",
@@ -152,7 +195,7 @@ export default function ContactForm() {
               fontSize: "1.1rem",
             }}
           >
-            Submit
+            {isSubmitting ? "Submitting..." : "Submit"}
           </Button>
         </Stack>
       </Box>

@@ -3,6 +3,7 @@ import Hero from "./hero/Hero";
 import { Box, Divider, Stack, useMediaQuery, useTheme } from "@mui/material"; // Added useTheme here
 import TechnicalDetails from "./overview/technicalDetails/TechnicalDetails";
 import ContactForm from "../form/ContactForm";
+import ClickUpForm from "../form/ClickupForm";
 // Remove the separate useTheme import
 
 export default function Body({ images, heroImage, masterPlan }) {
@@ -18,7 +19,7 @@ export default function Body({ images, heroImage, masterPlan }) {
           images={images}
           masterPlan={masterPlan}
         />
-        <ContactForm />
+        <ClickUpForm />
       </Box>
     </Stack>
   );
