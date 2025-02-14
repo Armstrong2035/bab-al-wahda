@@ -2,6 +2,12 @@ import { mdTypography } from "@/utils/styles";
 import { Typography, Stack, Box, Button } from "@mui/material";
 
 export default function SubText1({ isDesktop }) {
+  const scrollToForm = () => {
+    const form = document.getElementById("riverside-contact-form");
+    if (form) {
+      form.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   const style1 = {
     heading: {
       fontFamily: "'Manrope', sans-serif",
@@ -44,7 +50,11 @@ export default function SubText1({ isDesktop }) {
           amenities. This is more than a home.
         </Typography>
 
-        <Button variant="contained" sx={{ backgroundColor: "#005244", mt: 3 }}>
+        <Button
+          variant="contained"
+          onClick={scrollToForm}
+          sx={{ backgroundColor: "#005244", mt: 3 }}
+        >
           Register Your Interest
         </Button>
       </Box>

@@ -32,6 +32,7 @@ export default function ContactForm() {
 
   return (
     <Box
+      id="riverside-contact-form"
       sx={{
         bgcolor: "#1C6658",
         p: 4,
