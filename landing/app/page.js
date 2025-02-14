@@ -22,11 +22,23 @@ const heroImage = "https://i.ibb.co/ppTrdbs/interior.png";
 
 const masterPlan = "https://i.ibb.co/WNqgnPmL/37.png";
 
+const floorPlanImages = [
+  "https://res.cloudinary.com/dulafqaoq/image/upload/v1739529471/four-bedroom_cefueh.png",
+  "https://res.cloudinary.com/dulafqaoq/image/upload/v1739529471/five-bedroom_tedvws.png",
+  "https://res.cloudinary.com/dulafqaoq/image/upload/v1739529472/one-bedroom_eechn8.png",
+  "https://res.cloudinary.com/dulafqaoq/image/upload/v1739529472/two-bedroom_haopfl.png",
+];
+
 export default function Home() {
   return (
     <div>
       <ScrollingAppBar />
-      <Body images={images} heroImage={heroImage} masterPlan={masterPlan} />
+      <Body
+        images={images}
+        heroImage={heroImage}
+        masterPlan={masterPlan}
+        floorPlanImages={floorPlanImages}
+      />
     </div>
   );
 }

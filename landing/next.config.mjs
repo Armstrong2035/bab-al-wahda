@@ -3,7 +3,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["i.ibb.co", "i.postimg.cc", "postimg.cc"],
+    domains: [
+      "i.ibb.co",
+      "i.postimg.cc",
+      "postimg.cc",
+      "damacriverside.subarashirealestate.com",
+      "res.cloudinary.com",
+    ],
   },
 };
 

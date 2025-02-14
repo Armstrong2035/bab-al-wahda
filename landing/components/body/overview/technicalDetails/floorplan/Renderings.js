@@ -1,94 +1,58 @@
 import { Card, CardContent, Stack, Button } from "@mui/material";
-import { React, useState } from "react";
+import { useState } from "react"; // Remove React since it's not needed with modern Next.js
 import Image from "next/image";
 
+const BEDROOM_TYPES = [
+  { id: "1bed", label: "1 Bedroom", imageIndex: 2 },
+  { id: "2bed", label: "2 Bedrooms", imageIndex: 3 },
+  { id: "4bed", label: "4 Bedrooms", imageIndex: 0 },
+  { id: "5bed", label: "5 Bedrooms", imageIndex: 1 },
+];
+
+const buttonStyles = (isActive) => ({
+  backgroundColor: isActive ? "#005244" : "transparent",
+  color: isActive ? "white" : "#005244",
+  borderColor: "#005244",
+  "&:hover": {
+    backgroundColor: isActive ? "#005244" : "transparent",
+    opacity: 0.9,
+  },
+});
+
 export default function Renderings({ images }) {
-  const [activeType, setActiveType] = useState("4bed"); // Changed to handle multiple types
+  const [activeType, setActiveType] = useState("4bed");
+
+  // Get the current image based on active type
+  const currentImage =
+    images[
+      BEDROOM_TYPES.find((type) => type.id === activeType)?.imageIndex || 0
+    ];
 
   return (
     <Card sx={{ mt: 5 }}>
-      <Stack direction="row" spacing={2} sx={{ p: 2 }}>
-        <Button
-          variant={activeType === "1bed" ? "contained" : "outlined"}
-          onClick={() => setActiveType("1bed")}
-          sx={{
-            backgroundColor: activeType === "1bed" ? "#005244" : "transparent",
-            color: activeType === "1bed" ? "white" : "#005244",
-            borderColor: "#005244",
-            "&:hover": {
-              backgroundColor:
-                activeType === "1bed" ? "#005244" : "transparent",
-              opacity: 0.9,
-            },
-          }}
-        >
-          1 Bedroom
-        </Button>
-        <Button
-          variant={activeType === "2bed" ? "contained" : "outlined"}
-          onClick={() => setActiveType("2bed")}
-          sx={{
-            backgroundColor: activeType === "2bed" ? "#005244" : "transparent",
-            color: activeType === "2bed" ? "white" : "#005244",
-            borderColor: "#005244",
-            "&:hover": {
-              backgroundColor:
-                activeType === "2bed" ? "#005244" : "transparent",
-              opacity: 0.9,
-            },
-          }}
-        >
-          2 Bedrooms
-        </Button>
-        <Button
-          variant={activeType === "4bed" ? "contained" : "outlined"}
-          onClick={() => setActiveType("4bed")}
-          sx={{
-            backgroundColor: activeType === "4bed" ? "#005244" : "transparent",
-            color: activeType === "4bed" ? "white" : "#005244",
-            borderColor: "#005244",
-            "&:hover": {
-              backgroundColor:
-                activeType === "4bed" ? "#005244" : "transparent",
-              opacity: 0.9,
-            },
-          }}
-        >
-          4 Bedrooms
-        </Button>
-        <Button
-          variant={activeType === "5bed" ? "contained" : "outlined"}
-          onClick={() => setActiveType("5bed")}
-          sx={{
-            backgroundColor: activeType === "5bed" ? "#005244" : "transparent",
-            color: activeType === "5bed" ? "white" : "#005244",
-            borderColor: "#005244",
-            "&:hover": {
-              backgroundColor:
-                activeType === "5bed" ? "#005244" : "transparent",
-              opacity: 0.9,
-            },
-          }}
-        >
-          5 Bedrooms
-        </Button>
+      <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ p: 2 }}>
+        {BEDROOM_TYPES.map((type) => (
+          <Button
+            key={type.id}
+            variant={activeType === type.id ? "contained" : "outlined"}
+            onClick={() => setActiveType(type.id)}
+            sx={buttonStyles(activeType === type.id)}
+          >
+            {type.label}
+          </Button>
+        ))}
       </Stack>
       <CardContent>
-        <div style={{ position: "relative", height: "100%", width: "100%" }}>
+        <div
+          style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}
+        >
           <Image
-            src={
-              activeType === "1bed"
-                ? images[2]
-                : activeType === "2bed"
-                ? images[3]
-                : activeType === "4bed"
-                ? images[0]
-                : images[1]
-            }
+            src={currentImage}
             alt={`${activeType} layout`}
-            layout={"responsive"}
-            width={100}
-            height={100}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+            style={{ objectFit: "contain" }}
+            priority={activeType === "4bed"} // Prioritize loading of default image
           />
         </div>
       </CardContent>

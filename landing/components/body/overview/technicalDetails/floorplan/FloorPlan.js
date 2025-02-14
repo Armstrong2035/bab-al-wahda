@@ -4,18 +4,11 @@ import Renderings from "./Renderings";
 import SubText from "./SubText";
 import SmRenderings from "./SmRenderings";
 
-const floorPlanImages = [
-  "/floorplan/four-bedroom.png",
-  "/floorplan/five-bedroom.png",
-  "/floorplan/one-bedroom.png",
-  "/floorplan/two-bedroom.png",
-];
-
-export default function FloorPlan({ isDesktop }) {
+export default function FloorPlan({ isDesktop, floorPlanImages }) {
   return (
     <Container>
       <Heading />
-      ``
+
       {isDesktop ? (
         <Renderings images={floorPlanImages} />
       ) : (
