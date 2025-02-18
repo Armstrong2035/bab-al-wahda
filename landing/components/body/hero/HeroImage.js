@@ -123,6 +123,7 @@ export default function HeroImage({ heroImage }) {
               alt="Damac riverside interior"
               fill
               quality={100}
+              priority={true}
               style={{
                 objectFit: "contain",
               }}
