@@ -1,18 +1,20 @@
-import { Box, Stack, IconButton } from "@mui/material";
-import Image from "next/image";
-import { useState } from "react";
+import { Box, IconButton, Modal, Grid, Paper, useTheme } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { useSwipeable } from "react-swipeable"; // Need to install this package
+import { useState } from "react";
+import { useSwipeable } from "react-swipeable";
+import Image from "next/image";
 
-export default function SmallImageList({ images }) {
-  const [currentImage, setCurrentImage] = useState(0);
+const Lightbox = ({ images, startIndex = 0, onClose, open }) => {
+  const [currentImage, setCurrentImage] = useState(startIndex);
   const [sliding, setSliding] = useState(false);
+  const theme = useTheme();
 
   const nextImage = () => {
     setSliding(true);
     setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    setTimeout(() => setSliding(false), 500); // Match this with transition duration
+    setTimeout(() => setSliding(false), 500);
   };
 
   const prevImage = () => {
@@ -21,7 +23,6 @@ export default function SmallImageList({ images }) {
     setTimeout(() => setSliding(false), 500);
   };
 
-  // Swipe handlers
   const handlers = useSwipeable({
     onSwipedLeft: () => nextImage(),
     onSwipedRight: () => prevImage(),
@@ -30,159 +31,217 @@ export default function SmallImageList({ images }) {
   });
 
   return (
-    <Box
+    <Modal
+      open={open}
+      onClose={onClose}
       sx={{
-        position: "relative",
-        mt: 10,
-        "&:hover .carousel-controls": {
-          opacity: 1,
-        },
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        bgcolor: "rgba(0, 0, 0, 0.9)",
       }}
-      {...handlers}
     >
       <Box
+        {...handlers}
         sx={{
           position: "relative",
-          height: { xs: "80vh", sm: "100vh" },
           width: "100%",
-          borderRadius: { xs: "10px", sm: "10px" },
-          overflow: "hidden",
+          height: "100%",
+          maxWidth: theme.breakpoints.values.lg,
+          maxHeight: "100vh",
+          p: 4,
         }}
       >
-        {/* Previous Image (for transition) */}
-        <Box
+        {/* Close Button */}
+        <IconButton
+          onClick={onClose}
           sx={{
             position: "absolute",
-            width: "100%",
-            height: "100%",
-            opacity: sliding ? 1 : 0,
-            transition: "opacity 0.5s ease-in-out",
+            right: theme.spacing(2),
+            top: theme.spacing(2),
+            color: "white",
             zIndex: 1,
+            "&:hover": {
+              color: "grey.300",
+            },
           }}
         >
-          <Image
-            src={images[(currentImage - 1 + images.length) % images.length]}
-            alt="previous image"
-            width={1920}
-            height={1080}
-            style={{
-              objectFit: "cover",
-              width: "100%",
-              height: "100%",
-            }}
-            quality={100}
-          />
-        </Box>
+          <CloseIcon />
+        </IconButton>
 
-        {/* Current Image */}
+        {/* Image Container */}
         <Box
           sx={{
             position: "relative",
             width: "100%",
             height: "100%",
-            opacity: 1,
-            transition: "opacity 0.5s ease-in-out",
-            zIndex: 2,
           }}
         >
-          <Image
-            src={images[currentImage]}
-            alt={`image ${currentImage + 1}`}
-            width={1920}
-            height={1080}
-            style={{
-              objectFit: "cover",
+          {/* Previous Image */}
+          <Box
+            sx={{
+              position: "absolute",
+              inset: 0,
+              opacity: sliding ? 1 : 0,
+              transition: "opacity 0.5s ease-in-out",
+            }}
+          >
+            <Image
+              src={images[(currentImage - 1 + images.length) % images.length]}
+              alt="previous image"
+              fill
+              style={{ objectFit: "contain" }}
+              quality={100}
+            />
+          </Box>
+
+          {/* Current Image */}
+          <Box
+            sx={{
+              position: "relative",
               width: "100%",
               height: "100%",
             }}
-            quality={100}
-          />
+          >
+            <Image
+              src={images[currentImage]}
+              alt={`image ${currentImage + 1}`}
+              fill
+              style={{ objectFit: "contain" }}
+              quality={100}
+            />
+          </Box>
+        </Box>
+
+        {/* Navigation Arrows */}
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            px: 2,
+          }}
+        >
+          <IconButton
+            onClick={prevImage}
+            sx={{
+              bgcolor: "rgba(255, 255, 255, 0.8)",
+              "&:hover": {
+                bgcolor: "rgba(255, 255, 255, 0.9)",
+                transform: "scale(1.1)",
+              },
+              transition: "transform 0.2s ease-in-out",
+            }}
+          >
+            <ChevronLeftIcon />
+          </IconButton>
+          <IconButton
+            onClick={nextImage}
+            sx={{
+              bgcolor: "rgba(255, 255, 255, 0.8)",
+              "&:hover": {
+                bgcolor: "rgba(255, 255, 255, 0.9)",
+                transform: "scale(1.1)",
+              },
+              transition: "transform 0.2s ease-in-out",
+            }}
+          >
+            <ChevronRightIcon />
+          </IconButton>
+        </Box>
+
+        {/* Dots Navigation */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: theme.spacing(2),
+            left: "50%",
+            transform: "translateX(-50%)",
+            display: "flex",
+            gap: 1,
+          }}
+        >
+          {images.map((_, index) => (
+            <Box
+              key={index}
+              onClick={() => {
+                setSliding(true);
+                setCurrentImage(index);
+                setTimeout(() => setSliding(false), 500);
+              }}
+              sx={{
+                width: 8,
+                height: 8,
+                borderRadius: "50%",
+                bgcolor:
+                  currentImage === index ? "white" : "rgba(255,255,255,0.5)",
+                cursor: "pointer",
+                transition: "all 0.3s ease-in-out",
+                transform: currentImage === index ? "scale(1.2)" : "scale(1)",
+                "&:hover": {
+                  bgcolor: "white",
+                  transform: "scale(1.2)",
+                },
+              }}
+            />
+          ))}
         </Box>
       </Box>
+    </Modal>
+  );
+};
 
-      {/* Navigation Arrows */}
-      <Box
-        className="carousel-controls"
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          px: 2,
-          opacity: 0,
-          transition: "opacity 0.3s",
-          zIndex: 3,
-        }}
-      >
-        <IconButton
-          onClick={prevImage}
-          sx={{
-            bgcolor: "rgba(255,255,255,0.8)",
-            "&:hover": {
-              bgcolor: "rgba(255,255,255,0.9)",
-              transform: "scale(1.1)",
-            },
-            transition: "transform 0.2s ease-in-out",
-          }}
-        >
-          <ChevronLeftIcon />
-        </IconButton>
-        <IconButton
-          onClick={nextImage}
-          sx={{
-            bgcolor: "rgba(255,255,255,0.8)",
-            "&:hover": {
-              bgcolor: "rgba(255,255,255,0.9)",
-              transform: "scale(1.1)",
-            },
-            transition: "transform 0.2s ease-in-out",
-          }}
-        >
-          <ChevronRightIcon />
-        </IconButton>
-      </Box>
+// Thumbnail Grid Component
+const ImageGallery = ({ images }) => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [startIndex, setStartIndex] = useState(0);
 
-      {/* Dots Navigation */}
-      <Stack
-        direction="row"
-        spacing={1}
-        sx={{
-          position: "absolute",
-          bottom: 16,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 3,
-        }}
-      >
-        {images.map((_, index) => (
-          <Box
-            key={index}
-            onClick={() => {
-              setSliding(true);
-              setCurrentImage(index);
-              setTimeout(() => setSliding(false), 500);
-            }}
-            sx={{
-              width: 8,
-              height: 8,
-              borderRadius: "50%",
-              bgcolor:
-                currentImage === index ? "white" : "rgba(255,255,255,0.5)",
-              cursor: "pointer",
-              transition: "all 0.3s ease-in-out",
-              transform: currentImage === index ? "scale(1.2)" : "scale(1)",
-              "&:hover": {
-                bgcolor: "white",
-                transform: "scale(1.2)",
-              },
-            }}
-          />
+  return (
+    <Box sx={{ width: "100%", mt: 10 }}>
+      <Grid container spacing={2}>
+        {images.map((image, index) => (
+          <Grid item xs={6} md={4} lg={3} key={index}>
+            <Paper
+              elevation={2}
+              sx={{
+                position: "relative",
+                paddingTop: "100%", // 1:1 Aspect ratio
+                cursor: "pointer",
+                overflow: "hidden",
+                borderRadius: 1,
+              }}
+              onClick={() => {
+                setStartIndex(index);
+                setLightboxOpen(true);
+              }}
+            >
+              <Image
+                src={image}
+                alt={`thumbnail ${index + 1}`}
+                fill
+                style={{
+                  objectFit: "cover",
+                  transition: "transform 0.3s ease-in-out",
+                  "&:hover": {
+                    transform: "scale(1.1)",
+                  },
+                }}
+              />
+            </Paper>
+          </Grid>
         ))}
-      </Stack>
+      </Grid>
+
+      <Lightbox
+        images={images}
+        startIndex={startIndex}
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </Box>
   );
-}
+};
+
+export default ImageGallery;

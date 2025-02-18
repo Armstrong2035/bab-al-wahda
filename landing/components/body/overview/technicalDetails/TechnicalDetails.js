@@ -9,14 +9,18 @@ export default function TechnicalDetails({
   masterPlan,
   floorPlanImages,
 }) {
+  const dividerMargins = {
+    mt: isDesktop ? 20 : 10,
+    mb: isDesktop ? 20 : 10,
+  };
   return (
     <Box>
       <Location masterPlan={masterPlan} />
-      <Divider sx={{ mt: 20, mb: 20 }} />
+      <Divider sx={dividerMargins} />
       <Gallery isDesktop={isDesktop} images={images} />
-      <Divider sx={{ mt: 20, mb: 20 }} />
+      <Divider sx={dividerMargins} />
       <FloorPlan floorPlanImages={floorPlanImages} isDesktop={isDesktop} />
-      <Divider sx={{ mt: 20, mb: 20 }} />
+      <Divider sx={dividerMargins} />
       <Features />
     </Box>
   );

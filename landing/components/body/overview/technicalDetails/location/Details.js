@@ -20,22 +20,22 @@ export default function Details() {
 
   const apartmentData = [
     { label: "Unit Types", value: "1 & 2 Bedrooms" },
-    { label: "Area Range", value: "798 - 1,331 sq.ft" },
-    { label: "Completion", value: "March 2029" },
-    { label: "Handover Date", value: "Q2 2029" },
+    { label: "Area Range", value: "690 - 1,331 sq.ft" },
+
+    { label: "Handover Date", value: "Q1 2029" },
     { label: "Ownership", value: "Freehold" },
-    { label: "Payment Plan", value: "60/40" },
+    { label: "Payment Plan", value: "70/30" },
     { label: "Deposit Required", value: "20%" },
   ];
 
   const townhouseData = [
-    { label: "Unit Types", value: "3 & 4 Bedrooms" },
+    { label: "Unit Types", value: "4 & 5 Bedrooms" },
     { label: "Area Range", value: "2,460 - 3,200 sq.ft" },
-    { label: "Completion", value: "March 2029" },
-    { label: "Handover Date", value: "Q2 2029" },
+
+    { label: "Handover Date", value: "Q3 2028" },
     { label: "Ownership", value: "Freehold" },
     { label: "Payment Plan", value: "70/30" },
-    { label: "Deposit Required", value: "30%" },
+    { label: "Deposit Required", value: "20%" },
   ];
 
   return (

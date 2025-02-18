@@ -6,9 +6,8 @@ export default function HeroImage({ heroImage }) {
     <Box
       sx={{
         position: "relative",
-        height: { xs: "80vh", sm: "100vh" },
         width: "100%",
-        borderRadius: { xs: "10px", sm: "10px" },
+        borderRadius: "10px 10px",
         overflow: "hidden",
       }}
     >

@@ -12,15 +12,13 @@ import SmallImageList from "./SmallImageList";
 export default function Gallery({ isDesktop, images }) {
   return (
     <Box sx={{ mt: 10 }}>
-      <Container>
-        <Heading />
+      <Heading />
 
-        {isDesktop ? (
-          <ImagesLayout images={images} />
-        ) : (
-          <SmallImageList images={images} />
-        )}
-      </Container>
+      {isDesktop ? (
+        <ImagesLayout images={images} isDesktop={isDesktop} />
+      ) : (
+        <SmallImageList images={images} isDesktop={isDesktop} />
+      )}
     </Box>
   );
 }
