@@ -1,29 +1,33 @@
 import { Manrope } from "next/font/google";
 
 export const metadata = {
-  title: "DAMAC Riverside Views | Luxury Waterfront Living in Dubai",
+  title: "The Grand Hall Dubai",
   description:
-    "Experience luxury waterfront living at DAMAC Riverside Views. 1 & 2 bedroom apartments starting from AED 888,000. Located in Dubai Investment Park.",
+    "Host unforgettable events at The Grand Hall, Dubai’s premier venue for weddings, corporate functions, and special celebrations. Elegant spaces, world-class service, and a prime location await you.",
   keywords: [
-    "waterfront living",
-    "Dubai property",
-    "DAMAC Properties",
-    "riverside apartments",
-    "Dubai Investment Park",
-    "luxury apartments Dubai",
+    "Dubai event venue",
+    "The Grand Hall",
+    "event hall Dubai",
+    "wedding venues Dubai",
+    "corporate events Dubai",
+    "Dubai banquet hall",
+    "luxury event space",
+    "conference venue Dubai",
+    "Dubai party hall",
+    "event planning Dubai",
   ],
 
-  icons: {
-    icon: "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
-    shortcut:
-      "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
-    apple:
-      "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
-    other: {
-      rel: "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
-      url: "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
-    },
-  },
+  // icons: {
+  //   icon: "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
+  //   shortcut:
+  //     "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
+  //   apple:
+  //     "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
+  //   other: {
+  //     rel: "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
+  //     url: "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
+  //   },
+  // },
 };
 
 const manrope = Manrope({
