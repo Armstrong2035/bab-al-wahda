@@ -36,18 +36,17 @@ export default function SubText1({ isDesktop }) {
       <Box>
         <Typography sx={isDesktop ? style1.heading : mdTypography.heading32}>
           {" "}
-          Damac Riverside Views
+          Bab Al Wahda event halls
         </Typography>
-        <Typography sx={style1.body}>
-          4 & 5 bedroom riverside townhouses
-        </Typography>
+        <Typography sx={style1.body}>1200 and 1800 sqft halls</Typography>
       </Box>
 
       <Box>
         <Typography sx={isDesktop ? style1.body : mdTypography.body16Gray}>
-          Welcome to Dubai's foremost wellness-inspired residential community,
-          Providing you with Stunning waterfront views, and world-class
-          amenities. This is more than a home.
+          Experience elegance and excellence at Bab Al Wahda, the premier
+          destination for unforgettable events. From grand celebrations to
+          corporate gatherings, our state-of-the-art venue offers stunning
+          décor, seamless service, and world-class amenities.
         </Typography>
 
         <Button
@@ -55,7 +54,7 @@ export default function SubText1({ isDesktop }) {
           onClick={scrollToForm}
           sx={{ backgroundColor: "#005244", mt: 3 }}
         >
-          Register Your Interest
+          Call us
         </Button>
       </Box>
     </Stack>

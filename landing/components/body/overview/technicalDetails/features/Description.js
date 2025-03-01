@@ -1,81 +1,59 @@
 import { Box, Grid, Typography, Paper } from "@mui/material";
-import HomeWorkIcon from "@mui/icons-material/HomeWork";
-import BeachAccessIcon from "@mui/icons-material/BeachAccess";
-import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
-import ChildCareIcon from "@mui/icons-material/ChildCare";
-import TheatersIcon from "@mui/icons-material/Theaters";
-import AgricultureIcon from "@mui/icons-material/Agriculture";
-import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
-import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
-import SportsMartialArtsIcon from "@mui/icons-material/SportsMartialArts";
-import OutdoorGrillIcon from "@mui/icons-material/OutdoorGrill";
-import SpaIcon from "@mui/icons-material/Spa";
-import RestaurantIcon from "@mui/icons-material/Restaurant";
-import MusicNoteIcon from "@mui/icons-material/MusicNote";
-import ExtensionIcon from "@mui/icons-material/Extension";
-import DinnerDiningIcon from "@mui/icons-material/DinnerDining";
+
+import {
+  Business as BusinessIcon,
+  Monitor as ScreenshotMonitorIcon,
+  WbIncandescent as WbIncandescentIcon,
+  Mic as MicExternalOnIcon,
+  QueueMusic as LibraryMusicIcon,
+  Groups as GroupsIcon,
+  Videocam as VideoProjectorIcon,
+  SurroundSound as SurroundSoundIcon,
+  GraphicEq as MixerIcon,
+  Payment as PaymentsIcon,
+} from "@mui/icons-material";
 
 export default function FeaturesList() {
   const amenities = [
     {
-      icon: <HomeWorkIcon sx={{ fontSize: 40 }} />,
-      title: "CLUBHOUSE & RETAIL",
+      icon: <BusinessIcon sx={{ fontSize: 40 }} />,
+      title: "SPACIOUS VENUE",
     },
     {
-      icon: <BeachAccessIcon sx={{ fontSize: 40 }} />,
-      title: "MALIBU COVE",
+      icon: <ScreenshotMonitorIcon sx={{ fontSize: 40 }} />,
+      title: "IMMERSIVE VISUALS",
     },
     {
-      icon: <TheaterComedyIcon sx={{ fontSize: 40 }} />,
-      title: "AMPHITHEATRE / LAWN",
+      icon: <WbIncandescentIcon sx={{ fontSize: 40 }} />,
+      title: "DYNAMIC LIGHTING",
     },
     {
-      icon: <ChildCareIcon sx={{ fontSize: 40 }} />,
-      title: "KIDZ ADVENTURE LAND",
+      icon: <MicExternalOnIcon sx={{ fontSize: 40 }} />,
+      title: "PREMIUM SOUND",
     },
     {
-      icon: <TheatersIcon sx={{ fontSize: 40 }} />,
-      title: "FLOATING CINEMA",
+      icon: <LibraryMusicIcon sx={{ fontSize: 40 }} />,
+      title: "PROFESSIONAL MIXING",
     },
     {
-      icon: <AgricultureIcon sx={{ fontSize: 40 }} />,
-      title: "HYDROPONIC FARM",
+      icon: <GroupsIcon sx={{ fontSize: 40 }} />,
+      title: "IDEAL FOR GATHERINGS",
     },
     {
-      icon: <SportsEsportsIcon sx={{ fontSize: 40 }} />,
-      title: "GAMES ZONE",
+      icon: <VideoProjectorIcon sx={{ fontSize: 40 }} />,
+      title: "HIGH-END PROJECTORS",
     },
     {
-      icon: <FitnessCenterIcon sx={{ fontSize: 40 }} />,
-      title: "WALL CLIMBING",
+      icon: <SurroundSoundIcon sx={{ fontSize: 40 }} />,
+      title: "HIGH-QUALITY SOUND",
     },
     {
-      icon: <SportsMartialArtsIcon sx={{ fontSize: 40 }} />,
-      title: "CALISTHENICS STATIONS",
+      icon: <MixerIcon sx={{ fontSize: 40 }} />,
+      title: "EXPERT SOUND MIXING",
     },
     {
-      icon: <OutdoorGrillIcon sx={{ fontSize: 40 }} />,
-      title: "LIVE COOKING CLASSES/BBQ",
-    },
-    {
-      icon: <SpaIcon sx={{ fontSize: 40 }} />,
-      title: "ESSENTIAL OILS LAKE",
-    },
-    {
-      icon: <RestaurantIcon sx={{ fontSize: 40 }} />,
-      title: "PORTOFINO RESTAURANT",
-    },
-    {
-      icon: <MusicNoteIcon sx={{ fontSize: 40 }} />,
-      title: "FLOATING OPERA",
-    },
-    {
-      icon: <ExtensionIcon sx={{ fontSize: 40 }} />,
-      title: "OPAL CHESS HAVEN",
-    },
-    {
-      icon: <DinnerDiningIcon sx={{ fontSize: 40 }} />,
-      title: "ISLAND RESTAURANT",
+      icon: <PaymentsIcon sx={{ fontSize: 40 }} />,
+      title: "DEPOSIT REQUIRED",
     },
   ];
 

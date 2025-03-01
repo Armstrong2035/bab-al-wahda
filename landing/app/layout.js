@@ -1,12 +1,12 @@
 import { Manrope } from "next/font/google";
 
 export const metadata = {
-  title: "The Grand Hall Dubai",
+  title: "Bab Al Wahda event center",
   description:
-    "Host unforgettable events at The Grand Hall, Dubai’s premier venue for weddings, corporate functions, and special celebrations. Elegant spaces, world-class service, and a prime location await you.",
+    "Host unforgettable events at Bab Al Wahda event center, Dubai’s premier venue for weddings, corporate functions, and special celebrations. Elegant spaces, world-class service, and a prime location await you.",
   keywords: [
     "Dubai event venue",
-    "The Grand Hall",
+    "Bab Al Wahda event center",
     "event hall Dubai",
     "wedding venues Dubai",
     "corporate events Dubai",

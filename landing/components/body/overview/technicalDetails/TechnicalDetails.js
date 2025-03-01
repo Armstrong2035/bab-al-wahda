@@ -19,7 +19,7 @@ export default function TechnicalDetails({
       <Divider sx={dividerMargins} />
       <Gallery isDesktop={isDesktop} images={images} />
       <Divider sx={dividerMargins} />
-      <FloorPlan floorPlanImages={floorPlanImages} isDesktop={isDesktop} />
+      {/* <FloorPlan floorPlanImages={floorPlanImages} isDesktop={isDesktop} /> */}
       <Divider sx={dividerMargins} />
       <Features />
     </Box>

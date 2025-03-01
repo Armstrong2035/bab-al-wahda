@@ -18,24 +18,28 @@ export default function Details() {
     setValue(newValue);
   };
 
-  const apartmentData = [
-    { label: "Unit Types", value: "1 & 2 Bedrooms" },
-    { label: "Area Range", value: "690 - 1,331 sq.ft" },
-
-    { label: "Handover Date", value: "Q1 2029" },
-    { label: "Ownership", value: "Freehold" },
-    { label: "Payment Plan", value: "70/30" },
-    { label: "Deposit Required", value: "20%" },
+  const hall7 = [
+    { label: "Hall 7", value: "" },
+    { label: "Capacity", value: "250 - 300 guests" },
+    {
+      label: "Technology",
+      value: "10 TVs, a large LED screen, premium speakers, and RGB lighting",
+    },
+    { label: "Sound System", value: "12 microphones & digital mixer" },
+    { label: "Sound Mixer", value: "Presonus StudioLive 32s" },
+    { label: "Deposit Required", value: "50%" },
   ];
 
-  const townhouseData = [
-    { label: "Unit Types", value: "4 & 5 Bedrooms" },
-    { label: "Area Range", value: "2,460 - 3,200 sq.ft" },
-
-    { label: "Handover Date", value: "Q3 2028" },
-    { label: "Ownership", value: "Freehold" },
-    { label: "Payment Plan", value: "70/30" },
-    { label: "Deposit Required", value: "20%" },
+  const hall8 = [
+    { label: "Hall 8", value: "" },
+    { label: "Capacity", value: "100 - 150 guests" },
+    {
+      label: "Technology",
+      value: "2 projectors, high-quality speakers, and microphones",
+    },
+    { label: "Sound System", value: "6 microphones & digital mixer" },
+    { label: "Sound Mixer", value: "Presonus StudioLive Series III 32s" },
+    { label: "Deposit Required", value: "50%" },
   ];
 
   return (
@@ -56,8 +60,8 @@ export default function Details() {
           },
         }}
       >
-        <Tab label="Apartments" />
-        <Tab label="Townhouses" />
+        <Tab label="Hall 7" />
+        <Tab label="Hall 8" />
       </Tabs>
 
       <div role="tabpanel" hidden={value !== 0}>
@@ -69,7 +73,7 @@ export default function Details() {
           >
             <Table>
               <TableBody>
-                {apartmentData.map((row, index) => (
+                {hall7.map((row, index) => (
                   <TableRow key={index} sx={{ borderColor: "#1C6658" }}>
                     <TableCell sx={{ color: "white" }}>{row.label}</TableCell>
                     <TableCell sx={{ color: "white" }}>{row.value}</TableCell>
@@ -90,7 +94,7 @@ export default function Details() {
           >
             <Table>
               <TableBody>
-                {townhouseData.map((row, index) => (
+                {hall8.map((row, index) => (
                   <TableRow key={index} sx={{ borderColor: "#1C6658" }}>
                     <TableCell sx={{ color: "white" }}>{row.label}</TableCell>
                     <TableCell sx={{ color: "white" }}>{row.value}</TableCell>

@@ -16,13 +16,13 @@ export default function HeroText({ isDesktop }) {
   return (
     <Stack>
       <Typography sx={isDesktop ? style : mdTypography.heading48}>
-        - where balance
+        - Bab Al Wahda
       </Typography>
       <Typography sx={isDesktop ? style : mdTypography.heading48}>
-        is a way of living,
+        Event Hall And
       </Typography>
       <Typography sx={isDesktop ? style : mdTypography.heading48}>
-        not a hard choice
+        Management
       </Typography>
     </Stack>
   );

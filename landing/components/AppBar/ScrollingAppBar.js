@@ -29,11 +29,9 @@ export default function ScrollingAppBar() {
               animation: "scrollText 15s linear infinite",
             }}
           >
-            Damac Riverside Views • Damac Riverside Views • Damac Riverside
-            Views • Damac Riverside Views • Damac Riverside Views • Damac
-            Riverside Views • Damac Riverside Views • Damac Riverside Views •
-            Damac Riverside Views • Damac Riverside Views • Damac Riverside
-            Views • Damac Riverside Views •
+            Bab Al Wahda • Bab Al Wahda • Bab Al Wahda • Bab Al Wahda • Bab Al
+            Wahda • Bab Al Wahda • Bab Al Wahda • Bab Al Wahda • Bab Al Wahda •
+            Bab Al Wahda • Bab Al Wahda • Bab Al Wahda •
           </Typography>
         </Box>
       </Toolbar>

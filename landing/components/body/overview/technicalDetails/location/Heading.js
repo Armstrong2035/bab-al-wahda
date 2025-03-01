@@ -13,7 +13,7 @@ export default function Heading() {
       <Box>
         <Typography sx={typography.regular28}>Location</Typography>
         <Typography sx={typography.regular16}>
-          Connected to the City yet inside Nature.
+          More than just a venue—it's where memories are made.
         </Typography>
       </Box>
     </Stack>
