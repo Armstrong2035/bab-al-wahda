@@ -7,9 +7,9 @@ export default function ScrollingAppBar() {
       sx={{ backgroundColor: "#1C6658", overflow: "hidden" }}
     >
       <Toolbar>
-        <Box sx={{ mr: 3 }}>
-          <Typography>Subarashi</Typography>
-        </Box>
+        {/* <Box sx={{ mr: 3 }}>
+          <Typography>Bab Al Wahda</Typography>
+        </Box> */}
         <Box
           sx={{
             display: "flex",
