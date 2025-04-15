@@ -40,7 +40,7 @@ export default function Description() {
 
       <Box>
         <Typography sx={typography.regular48}>Contact us:</Typography>
-        <Typography sx={typography.regular48}>+971 50 726 5334</Typography>
+        <Typography sx={{...typography.regular48, fontSize: '40px'}}>+971 50 726 5334</Typography>
       </Box>
     </Stack>
   );
