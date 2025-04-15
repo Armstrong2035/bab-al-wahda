@@ -17,17 +17,17 @@ export const metadata = {
     "event planning Dubai",
   ],
 
-  // icons: {
-  //   icon: "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
-  //   shortcut:
-  //     "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
-  //   apple:
-  //     "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
-  //   other: {
-  //     rel: "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
-  //     url: "https://res.cloudinary.com/dulafqaoq/image/upload/t_Favicon/v1739530384/SUBRASHI_2_nex463.png",
-  //   },
-  // },
+  icons: {
+    icon: "https://res.cloudinary.com/dlrqvlq89/image/upload/v1744702778/BAB_wfapek.png",
+    shortcut:
+      "https://res.cloudinary.com/dlrqvlq89/image/upload/v1744702778/BAB_wfapek.png",
+    apple:
+      "https://res.cloudinary.com/dlrqvlq89/image/upload/v1744702778/BAB_wfapek.png",
+    other: {
+      rel: "https://res.cloudinary.com/dlrqvlq89/image/upload/v1744702778/BAB_wfapek.png",
+      url: "https://res.cloudinary.com/dlrqvlq89/image/upload/v1744702778/BAB_wfapek.png",
+    },
+  },
 };
 
 const manrope = Manrope({
