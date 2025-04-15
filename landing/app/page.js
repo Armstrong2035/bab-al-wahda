@@ -5,21 +5,14 @@ import Head from "next/head";
 export const dynamic = "force-static";
 
 const images = [
-  "https://i.ibb.co/spTbQVCM/Riverside-6.jpg",
-  "https://i.ibb.co/gZBJ4Fyh/Riverside-7.jpg",
-  "https://i.ibb.co/mVXcctvN/Riverside-3.jpg",
-  "https://i.ibb.co/QjtPj7T0/Riverside-2.jpg",
-  "https://i.ibb.co/TBvJHr5p/Riverside-1.jpg",
-  "https://i.ibb.co/7LhnTd6/eight.png",
-  "https://i.ibb.co/3yrCRpqY/fifteen.png",
-  "https://i.ibb.co/Vc5pmzyZ/fourteen.png",
-  "https://i.ibb.co/HDWJZ6Z6/nine.png",
-  "https://i.ibb.co/ccSKYxgy/nineteen.png",
-  "https://i.ibb.co/HTjjKDLS/seventeen.png",
-  "https://i.ibb.co/JWvvYZ01/twentyone.png",
+  "  https://res.cloudinary.com/dldvbrmzb/image/upload/f_auto,q_auto,fl_progressive/K_yfcedl.jpg",
+  "https://res.cloudinary.com/dldvbrmzb/image/upload/f_auto,q_auto,fl_progressive/c_ctyht4.jpg",
+  " https://res.cloudinary.com/dldvbrmzb/image/upload/f_auto,q_auto,fl_progressive/B_oqnqhf.jpg",
+  "https://res.cloudinary.com/dldvbrmzb/image/upload/f_auto,q_auto,fl_progressive/H_c1csod.jpg",
 ];
 
-const heroImage = "https://i.ibb.co/ppTrdbs/interior.png";
+const heroImage =
+  "https://res.cloudinary.com/dldvbrmzb/image/upload/f_auto,q_auto,fl_progressive/G_onbwfz.jpg";
 
 const masterPlan = "https://i.ibb.co/WNqgnPmL/37.png";
 

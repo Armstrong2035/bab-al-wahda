@@ -13,7 +13,7 @@ export default function Features() {
       </Box>
       {/* <Description /> */}
 
-      <HeroImage heroImage={interior} />
+      {/* <HeroImage heroImage={interior} /> */}
       <FeaturesList />
     </Container>
   );

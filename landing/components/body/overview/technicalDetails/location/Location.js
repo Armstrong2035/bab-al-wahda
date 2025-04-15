@@ -31,9 +31,9 @@ export default function Location({ masterPlan }) {
             <Details />
           </Grid2>
 
-          <Grid2 item size={{ sm: 12, md: 12, lg: 12 }}>
+          {/* <Grid2 item size={{ sm: 12, md: 12, lg: 12 }}>
             <HeroImage heroImage={masterPlan} />
-          </Grid2>
+          </Grid2> */}
         </Grid2>
       </Container>
     </Box>
